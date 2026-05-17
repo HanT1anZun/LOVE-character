@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "WebSearch",
+      "Bash(npm run *)",
+      "Bash(start *)",
+      "Bash(curl -s http://localhost:3001/results)",
+      "Bash(npx next *)",
+      "Bash(npx localtunnel *)",
+      "Read(//tmp/**)",
+      "Bash(jobs -l)",
+      "Bash(tasklist)",
+      "Bash(ipconfig)",
+      "Bash(gh auth *、)",
+      "Bash(git *)"
+    ]
+  }
+}

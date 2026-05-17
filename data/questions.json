@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "title": "恋爱倾向画像问卷",
+    "version": "1.0.0",
+    "total_questions": 32,
+    "scale_type": "5-point Likert",
+    "scale_labels": {
+      "1": "非常不同意",
+      "2": "不同意",
+      "3": "一般",
+      "4": "同意",
+      "5": "非常同意"
+    },
+    "dimensions": [
+      {
+        "id": "passion_eros",
+        "name": "激情投入",
+        "description": "测量个体在恋爱中受强烈身体吸引和理想化驱动的程度——源自Lee的Eros爱情风格和Sternberg的激情成分",
+        "source_constructs": ["Eros (Lee, 1973)", "Passion (Sternberg, 1986)"],
+        "question_count": 4
+      },
+      {
+        "id": "game_ludus",
+        "name": "游戏心态",
+        "description": "测量个体对待恋爱的游戏化程度——回避承诺、享受多选择、追求过程而非结果",
+        "source_constructs": ["Ludus (Lee, 1973)", "Dismissive attachment in Gen Z (Rosier, 2025)", "Situationship (Langlais et al., 2024)"],
+        "question_count": 4
+      },
+      {
+        "id": "companion_storge",
+        "name": "陪伴亲厚",
+        "description": "测量个体对友谊式渐进爱情的偏好——共享兴趣、日久生情、默契陪伴",
+        "source_constructs": ["Storge (Lee, 1973)", "Companionate love (Sternberg, 1986)"],
+        "question_count": 4
+      },
+      {
+        "id": "rational_pragma",
+        "name": "理性规划",
+        "description": "测量个体在恋爱中理性筛选和长期规划的程度——实用标准、阶段推进、未来导向",
+        "source_constructs": ["Pragma (Lee, 1973)", "Investment Model (Rusbult, 1980)", "Future-proofing (Hinge, 2025)"],
+        "question_count": 4
+      },
+      {
+        "id": "attachment_anxiety",
+        "name": "依恋焦虑",
+        "description": "测量个体在亲密关系中害怕被抛弃和过度寻求确认的程度",
+        "source_constructs": ["Attachment Anxiety (Brennan, Clark, & Shaver, 1998; ECR)", "ECR Chinese version (李同归 & 加藤和生, 2006)"],
+        "question_count": 4
+      },
+      {
+        "id": "attachment_avoidance",
+        "name": "依恋回避",
+        "description": "测量个体对亲密关系的不适感和情感独立倾向",
+        "source_constructs": ["Attachment Avoidance (Brennan et al., 1998; ECR)", "Avoidant inaccuracy for partner positives (Gauvin et al., 2024)", "Autonomy vs. avoidance (Genesse et al., 2025)"],
+        "question_count": 4
+      },
+      {
+        "id": "sacrifice_agape",
+        "name": "奉献利他",
+        "description": "测量个体在恋爱中无条件付出和自我牺牲的倾向",
+        "source_constructs": ["Agape (Lee, 1973)", "Willingness to Sacrifice (Rusbult et al., 1991)"],
+        "question_count": 4
+      },
+      {
+        "id": "communication_open",
+        "name": "沟通开放",
+        "description": "测量个体在关系中主动沟通和面对冲突时的处理偏好",
+        "source_constructs": ["Voice vs. Neglect (Rusbult, 1987; EVLN)", "Four conflict styles (Gottman, 1994)", "Love and Rejection Messages Theory (Marici, 2025)"],
+        "question_count": 4
+      }
+    ],
+    "reverse_items_count": 8,
+    "reverse_items_percentage": "25%",
+    "estimated_completion_time_minutes": "5–8",
+    "design_note": "所有题目为原创改写，基于成熟科研构念，未直接复制任何现成量表原文。题目风格面向中国高校年轻用户，融入当代恋爱现象（situationship、talking phase、消息焦虑等）。反向题占比25%，每维度各1题。"
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "dimension": "passion_eros",
+      "subscale": "instant_attraction",
+      "reverse": false,
+      "question": "遇到让我心动的人时，我会忍不住想立刻靠近对方、多了解对方。",
+      "source_construct": "Eros (Lee, 1973; Hendrick & Hendrick, 1986) — intense attraction and approach motivation",
+      "note": "测量一见倾心后的主动趋近行为，对应Eros核心特征"
+    },
+    {
+      "id": "Q02",
+      "dimension": "passion_eros",
+      "subscale": "chemistry_seeking",
+      "reverse": false,
+      "question": "对我来说，两个人之间有没有'化学反应'，决定了这段感情值不值得开始。",
+      "source_construct": "Eros + Passion component (Sternberg, 1986) — importance of physical chemistry",
+      "note": "测量将生理吸引作为关系入场条件的程度"
+    },
+    {
+      "id": "Q03",
+      "dimension": "passion_eros",
+      "subscale": "idealization",
+      "reverse": false,
+      "question": "喜欢一个人的时候，我会不自觉地美化对方，在眼里ta几乎什么都好。",
+      "source_construct": "Eros (Lee, 1973) — idealization of the beloved; positive illusions in romantic love",
+      "note": "测量恋爱早期的理想化倾向"
+    },
+    {
+      "id": "Q04",
+      "dimension": "passion_eros",
+      "subscale": "skepticism_of_instant_love",
+      "reverse": true,
+      "question": "我不太相信'第一眼就认定一个人'的感觉，真正的好感需要时间验证。",
+      "source_construct": "Eros (reversed) — skepticism toward passionate immediacy; contrast with Storge slow-development",
+      "note": "反向题，高分=低激情投入，反映对一见钟情的怀疑态度"
+    },
+    {
+      "id": "Q05",
+      "dimension": "game_ludus",
+      "subscale": "multi_dating_comfort",
+      "reverse": false,
+      "question": "在正式确定关系之前，同时和几个人保持联系是很正常的事，不必有负担。",
+      "source_construct": "Ludus (Lee, 1973) — multiplicity and non-exclusivity; Modern talking phase (Copenhaver & Whitaker, 2025)",
+      "note": "测量对非排他性交往的接受度，融入当代talking phase现象"
+    },
+    {
+      "id": "Q06",
+      "dimension": "game_ludus",
+      "subscale": "commitment_avoidance",
+      "reverse": false,
+      "question": "当一段关系开始变得太认真的时候，我会下意识地想往后退一步。",
+      "source_construct": "Ludus (Lee, 1973) — avoidance of commitment deepening; Dismissive attachment in Gen Z (Rosier, 2025)",
+      "note": "测量面对关系升级时的回避冲动，对应situationship维持机制"
+    },
+    {
+      "id": "Q07",
+      "dimension": "game_ludus",
+      "subscale": "process_over_outcome",
+      "reverse": false,
+      "question": "我觉得谈恋爱主要是享受这个过程，能不能走到最后没那么重要。",
+      "source_construct": "Ludus (Lee, 1973) — love as enjoyable pastime; Intentional dating counter-trend (Hinge, 2025)",
+      "note": "测量'过程导向'vs'结果导向'的恋爱态度"
+    },
+    {
+      "id": "Q08",
+      "dimension": "game_ludus",
+      "subscale": "sincerity",
+      "reverse": true,
+      "question": "我对每一段感情都很认真，不喜欢抱着'玩一玩'的态度对待任何人。",
+      "source_construct": "Ludus (reversed) — sincerity and responsibility; contrast with game-playing approach",
+      "note": "反向题，高分=低游戏心态，反映对待感情的认真态度"
+    },
+    {
+      "id": "Q09",
+      "dimension": "companion_storge",
+      "subscale": "friends_to_lovers",
+      "reverse": false,
+      "question": "我最向往的感情是从朋友做起，慢慢了解、慢慢走近，最后自然走到一起。",
+      "source_construct": "Storge (Lee, 1973) — friendship-to-love pathway; slow-developing affection",
+      "note": "测量对友谊→爱情渐进模式的偏好"
+    },
+    {
+      "id": "Q10",
+      "dimension": "companion_storge",
+      "subscale": "companionship_value",
+      "reverse": false,
+      "question": "对我来说，能聊得来的伴侣，比长得好看的伴侣重要得多。",
+      "source_construct": "Storge (Lee, 1973) — companionship over physical appearance; Intimacy component (Sternberg, 1986)",
+      "note": "测量陪伴价值vs外表吸引的权重偏好"
+    },
+    {
+      "id": "Q11",
+      "dimension": "companion_storge",
+      "subscale": "quiet_enduring_love",
+      "reverse": false,
+      "question": "我觉得最靠谱的感情不是轰轰烈烈的激情，而是日复一日的默契和信任。",
+      "source_construct": "Storge (Lee, 1973) — enduring quiet affection; Companionate love (Sternberg, 1986)",
+      "note": "测量对细水长流型感情的价值观认同"
+    },
+    {
+      "id": "Q12",
+      "dimension": "companion_storge",
+      "subscale": "boundary_clarity",
+      "reverse": true,
+      "question": "朋友就是朋友，恋人就是恋人，我很难接受从朋友变成恋人的模式。",
+      "source_construct": "Storge (reversed) — rigid friendship/romance boundary; discomfort with category blurring",
+      "note": "反向题，高分=低陪伴亲厚，反映对友-恋边界的高度区分"
+    },
+    {
+      "id": "Q13",
+      "dimension": "rational_pragma",
+      "subscale": "practical_screening",
+      "reverse": false,
+      "question": "选择交往对象时，我会综合考虑对方的学历、职业前景、家庭背景等现实条件。",
+      "source_construct": "Pragma (Lee, 1973) — shopping-list mate selection; Chinese pragmatism in mate choice",
+      "note": "测量择偶中的'清单式'实用筛选行为"
+    },
+    {
+      "id": "Q14",
+      "dimension": "rational_pragma",
+      "subscale": "future_orientation",
+      "reverse": false,
+      "question": "我不太可能和'明知道没有未来'的人谈恋爱，即使当下很喜欢。",
+      "source_construct": "Pragma (Lee, 1973) — long-term calculability; Future-proofing trend (Hinge D.A.T.E. Report, 2025); 先立业后成家 (计迎春等, 2025)",
+      "note": "测量以长期结果为前提的恋爱决策模式"
+    },
+    {
+      "id": "Q15",
+      "dimension": "rational_pragma",
+      "subscale": "staged_progression",
+      "reverse": false,
+      "question": "我觉得恋爱应该有明确的方向和节奏——到什么阶段就该推进什么事，不能一直原地踏步。",
+      "source_construct": "Pragma (Lee, 1973) + Commitment as short-term decision (Sternberg, 1986); 中国青年婚恋时间表意识",
+      "note": "测量对恋爱阶段性推进的规划需求"
+    },
+    {
+      "id": "Q16",
+      "dimension": "rational_pragma",
+      "subscale": "idealistic_over_practical",
+      "reverse": true,
+      "question": "只要两个人真心相爱，物质条件的差距和现实的困难都可以一起克服。",
+      "source_construct": "Pragma (reversed) — idealistic love overriding practical constraints; Romantic love ideology",
+      "note": "反向题，高分=低理性规划，反映爱情理想主义vs现实主义"
+    },
+    {
+      "id": "Q17",
+      "dimension": "attachment_anxiety",
+      "subscale": "abandonment_fear",
+      "reverse": false,
+      "question": "对方长时间不回消息的时候，我会控制不住地乱想——是不是我说错话了？是不是ta不在乎我了？",
+      "source_construct": "Attachment Anxiety (Brennan et al., 1998; ECR) — fear of abandonment; Digital-age communication anxiety",
+      "note": "测量数字通讯时代的被弃焦虑，以'不回消息'为当代触发场景"
+    },
+    {
+      "id": "Q18",
+      "dimension": "attachment_anxiety",
+      "subscale": "reassurance_seeking",
+      "reverse": false,
+      "question": "在恋爱中，我需要对方经常用语言或行动来确认：'我对你的心意没有变'。",
+      "source_construct": "Attachment Anxiety — excessive reassurance seeking (Brennan et al., 1998; ECR Chinese, 李同归, 2006)",
+      "note": "测量对伴侣反复确认情感的依赖程度"
+    },
+    {
+      "id": "Q19",
+      "dimension": "attachment_anxiety",
+      "subscale": "emotional_reactivity",
+      "reverse": false,
+      "question": "对方一旦对我稍微冷淡一点，我那天的心情就会跌到谷底。",
+      "source_construct": "Attachment Anxiety — emotional hypervigilance and reactivity to perceived distance",
+      "note": "测量对伴侣情绪温度变化的高度敏感性"
+    },
+    {
+      "id": "Q20",
+      "dimension": "attachment_anxiety",
+      "subscale": "secure_autonomy",
+      "reverse": true,
+      "question": "即使对方一整天没联系我，我也不会觉得有什么不妥，每个人都需要自己的空间。",
+      "source_construct": "Attachment Anxiety (reversed) — secure emotional regulation; Autonomous coping in relationships",
+      "note": "反向题，高分=低依恋焦虑，反映安全型的情感独立性"
+    },
+    {
+      "id": "Q21",
+      "dimension": "attachment_avoidance",
+      "subscale": "self_sufficiency_preference",
+      "reverse": false,
+      "question": "有时候我觉得谈恋爱挺累的，一个人生活反而更自在、更轻松。",
+      "source_construct": "Attachment Avoidance (Brennan et al., 1998) — self-sufficiency preference; 中国大学生回避偏高 (田瑞琪, 2004)",
+      "note": "测量对单身状态的情感偏好和关系代价感知"
+    },
+    {
+      "id": "Q22",
+      "dimension": "attachment_avoidance",
+      "subscale": "intimacy_discomfort",
+      "reverse": false,
+      "question": "当对方想和我聊很深的情感话题时，我会莫名想转移话题或者走开。",
+      "source_construct": "Attachment Avoidance — discomfort with emotional closeness; Avoidant inaccuracy for partner positives (Gauvin et al., 2024)",
+      "note": "测量对深层情感暴露的回避，回避者因此错过正面亲密信号"
+    },
+    {
+      "id": "Q23",
+      "dimension": "attachment_avoidance",
+      "subscale": "emotional_self_protection",
+      "reverse": false,
+      "question": "即使谈恋爱，我也需要保留一片完全属于自己的领地——不是所有事都要和对方共享。",
+      "source_construct": "Attachment Avoidance — maintained emotional distance; Autonomy vs. avoidance distinction (Genesse et al., 2025)",
+      "note": "测量亲密关系中的自我边界保护程度"
+    },
+    {
+      "id": "Q24",
+      "dimension": "attachment_avoidance",
+      "subscale": "comfort_with_intimacy",
+      "reverse": true,
+      "question": "我很享受和伴侣之间毫无保留的亲密感，什么都能聊、什么都愿意分享。",
+      "source_construct": "Attachment Avoidance (reversed) — comfort with vulnerability; Secure attachment characteristics",
+      "note": "反向题，高分=低依恋回避，反映对深度亲密的舒适感"
+    },
+    {
+      "id": "Q25",
+      "dimension": "sacrifice_agape",
+      "subscale": "self_sacrifice",
+      "reverse": false,
+      "question": "为了让喜欢的人开心，我愿意委屈自己做一些本来不太想做的事。",
+      "source_construct": "Agape (Lee, 1973) — self-sacrifice for beloved; Willingness to Sacrifice (Rusbult et al., 1991)",
+      "note": "测量为伴侣幸福而放弃自我偏好的意愿"
+    },
+    {
+      "id": "Q26",
+      "dimension": "sacrifice_agape",
+      "subscale": "enduring_devotion",
+      "reverse": false,
+      "question": "即使这段关系让我很辛苦，只要对方还需要我，我就很难下决心离开。",
+      "source_construct": "Agape (Lee, 1973) — unconditional endurance; Commitment maintenance (Rusbult et al., 1998); 投资模型中的沉没成本效应",
+      "note": "测量在痛苦中仍维持关系的奉献式坚持"
+    },
+    {
+      "id": "Q27",
+      "dimension": "sacrifice_agape",
+      "subscale": "partner_priority",
+      "reverse": false,
+      "question": "在感情里，看到对方开心，我的辛苦和委屈就没那么重要了。",
+      "source_construct": "Agape (Lee, 1973) — beloved's happiness prioritized over self-interest",
+      "note": "测量将伴侣幸福置于自身痛苦之上的倾向"
+    },
+    {
+      "id": "Q28",
+      "dimension": "sacrifice_agape",
+      "subscale": "self_care_boundary",
+      "reverse": true,
+      "question": "我觉得恋爱中每个人都应该先照顾好自己，过度牺牲对关系反而不好。",
+      "source_construct": "Agape (reversed) — healthy self-care; Autonomy in relationships (Genesse et al., 2025)",
+      "note": "反向题，高分=低奉献利他，反映理性自我关怀的边界意识"
+    },
+    {
+      "id": "Q29",
+      "dimension": "communication_open",
+      "subscale": "active_conflict_resolution",
+      "reverse": false,
+      "question": "遇到矛盾的时候，我倾向于立刻和对方坐下来好好聊，把心里的话说清楚。",
+      "source_construct": "Voice response (Rusbult, 1987; EVLN); Validating style (Gottman, 1994)",
+      "note": "测量面对冲突时的主动沟通和问题解决取向"
+    },
+    {
+      "id": "Q30",
+      "dimension": "communication_open",
+      "subscale": "open_difficult_topics",
+      "reverse": false,
+      "question": "我觉得情侣之间什么话题都应该能聊，包括那些让人不太舒服的话题。",
+      "source_construct": "Constructive communication (Gottman, 2015); Love and Rejection Messages Theory (Marici, 2025)",
+      "note": "测量对困难对话的开放度——日常'爱与拒绝信息'的质量"
+    },
+    {
+      "id": "Q31",
+      "dimension": "communication_open",
+      "subscale": "repair_initiative",
+      "reverse": false,
+      "question": "吵架之后，我通常是那个先主动破冰的人——发个表情包也好，开口说第一句话也好。",
+      "source_construct": "Accommodation and repair attempts (Rusbult et al., 1991; Gottman, 2015); 当代数字修复行为（表情包破冰）",
+      "note": "测量冲突后的主动修复意愿，融入当代数字原生代的破冰方式"
+    },
+    {
+      "id": "Q32",
+      "dimension": "communication_open",
+      "subscale": "conflict_avoidance",
+      "reverse": true,
+      "question": "有些矛盾说开了反而更糟，不如先放着、冷一下，时间自然会冲淡一切。",
+      "source_construct": "Neglect response (Rusbult, 1987); Stonewalling (Gottman, 1994); Demand-withdraw pattern",
+      "note": "反向题，高分=低沟通开放，反映面对冲突时的回避和冷处理倾向"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "恋爱倾向画像 · 方法论说明",
+    "version": "1.0.0",
+    "description": "面向用户和项目展示的方法论文案、理论说明、题库信息和免责声明。适合用于网站的方法说明页和论文附录。"
+  },
+  "project_overview": {
+    "title": "关于本测评",
+    "what_is_this": "「恋爱倾向画像」是一套基于成熟心理学构念的自我了解工具。它通过 32 道题目测量你在 8 个恋爱维度上的倾向，并生成一份属于你的恋爱风格画像。",
+    "what_is_not": "这不是一个心理诊断工具、临床量表或人格分类系统。它不会给你贴标签，也不会判断你的恋爱方式是否'正确'。它的目的是帮助你更清晰地看到自己在恋爱中的倾向、偏好和盲点。",
+    "target_audience": "本测评面向对自我探索感兴趣的高校学生和年轻人群体，适合用于课程项目、调研展示和个人反思，也适合作为轻量研究型产品的基础原型。"
+  },
+  "theoretical_framework": {
+    "title": "理论框架",
+    "description": "本测评的维度设计和题目编写基于以下公开发表的学术研究构念。所有题目均为受这些构念启发后的原创改写，未直接复制任何现成量表的原文。",
+    "frameworks": [
+      {
+        "name": "Lee 爱情风格理论",
+        "reference": "Lee, J. A. (1973). The Colors of Love.",
+        "contribution": "提供了六种爱情风格（Eros 激情、Ludus 游戏、Storge 陪伴、Pragma 理智、Mania 依赖、Agape 奉献）的分类框架，是本测评中多个维度的理论基础。",
+        "dimensions_used": ["激情投入", "游戏心态", "陪伴亲厚", "理性规划", "奉献利他"]
+      },
+      {
+        "name": "Sternberg 爱情三角理论",
+        "reference": "Sternberg, R. J. (1986). A triangular theory of love. Psychological Review.",
+        "contribution": "提出爱情的三个基本成分——亲密、激情、承诺——及其组合形成的七种爱情类型，为理解不同恋爱形态提供了简明框架。2024年Sternberg进一步提出RELIC理论，将爱情置于生态系统中理解。",
+        "dimensions_used": ["激情投入", "陪伴亲厚", "理性规划"]
+      },
+      {
+        "name": "成人依恋理论（ECR）",
+        "reference": "Brennan, Clark, & Shaver (1998). Self-report measurement of adult attachment. / 李同归 & 加藤和生 (2006). ECR中文版. 心理学报.",
+        "contribution": "建立了依恋焦虑和依恋回避两个维度，发现它们在成人浪漫关系中稳定存在。中国大学生的依恋特征已得到充分验证。",
+        "dimensions_used": ["依恋焦虑", "依恋回避"]
+      },
+      {
+        "name": "Rusbult 投资模型与 EVLN 冲突理论",
+        "reference": "Rusbult (1980, 1987); Le & Agnew (2003) meta-analysis.",
+        "contribution": "解释为什么人们选择留在或离开一段关系，以及面对冲突时的四种反应模式（表达、忠诚、忽视、离开）。",
+        "dimensions_used": ["理性规划", "奉献利他", "沟通开放"]
+      },
+      {
+        "name": "Gottman 婚姻冲突研究",
+        "reference": "Gottman, J. M. (1994, 2015). What Predicts Divorce?",
+        "contribution": "识别了建设性与破坏性沟通模式的区别，提出了'修复尝试'和'5:1正负比'等实用概念。",
+        "dimensions_used": ["沟通开放"]
+      },
+      {
+        "name": "当代关系科学前沿",
+        "reference": "Gauvin et al. (2024) 回避型个体错过伴侣正面情绪; Schulz et al. (2025) 关系满意度网络分析; Genesse et al. (2025) 关系中的自主性; 中国科学院心理研究所 (2025) 中国大学生婚育观调查.",
+        "contribution": "最新的研究发现被融入题目设计和结果解读中，使测评与当代年轻人的真实处境保持同步。",
+        "dimensions_used": ["所有维度"]
+      }
+    ]
+  },
+  "questionnaire_design": {
+    "title": "问卷设计说明",
+    "total_questions": 32,
+    "dimensions": 8,
+    "questions_per_dimension": 4,
+    "scale_type": "5级李克特量表（非常不同意 / 不同意 / 一般 / 同意 / 非常同意）",
+    "reverse_items": {
+      "count": 8,
+      "percentage": "25%",
+      "purpose": "减少默认同意偏差和极端反应偏差，同时用于一致性检测。每维度1题，分布在每4题组的最后1题。"
+    },
+    "design_principles": [
+      "所有题项为第一人称陈述句，避免问句和术语",
+      "每题只测量一个构念，避免双管问题",
+      "避免双重否定和绝对化措辞",
+      "语言面向中国高校年轻用户，融入当代恋爱场景",
+      "题目来源构念在每题的 source_construct 字段中明确标注",
+      "每维度不少于4题，满足基本的信度要求",
+      "反向题占25%，平衡了偏差控制与被试负担"
+    ],
+    "psychometric_note": "本问卷为基于理论构念的自编问卷，尚未经过大样本的探索性因素分析（EFA）和验证性因素分析（CFA）检验。题库设计预留了完整的元数据结构，便于后续进行项目分析和信效度验证。如果用于正式研究，建议先进行预试和项目筛选。"
+  },
+  "scoring_method": {
+    "title": "评分方法说明",
+    "steps": [
+      {
+        "step": 1,
+        "name": "反向计分",
+        "description": "对于标记为 reverse=true 的题目（共8题），将原始分数进行反向编码：1→5, 2→4, 3→3, 4→2, 5→1。这一步确保所有题目在维度内的测量方向一致。"
+      },
+      {
+        "step": 2,
+        "name": "维度聚合",
+        "description": "将每个维度内的4道题（含已反向处理的反向题）的分数求和，得到8个维度的原始总分。每个维度的原始分范围为4（全选1）到20（全选5）。"
+      },
+      {
+        "step": 3,
+        "name": "归一化",
+        "description": "使用公式「(原始总分 − 4) ÷ 16 × 100」将每个维度的原始总分转换为0–100的标准分，便于跨维度比较和雷达图展示。"
+      },
+      {
+        "step": 4,
+        "name": "类型匹配",
+        "description": "将用户的8维度得分向量与8种结果类型的维度锚点向量进行加权欧几里得距离计算。距离最小的类型即为主类型，第二小的为次类型。对于被该类型标记为 high 或 low 的关键维度，赋予2倍权重。"
+      },
+      {
+        "step": 5,
+        "name": "混合型判定",
+        "description": "当主类型和次类型的匹配度差距 ≤ 5 分时，不强行归类，而是输出 '主类型 × 次类型 混合倾向'，并给出混合倾向的说明。这反映了恋爱倾向常常是连续的而非离散的。"
+      },
+      {
+        "step": 6,
+        "name": "一致性评分",
+        "description": "从三个维度评估回答质量：（1）极端一致回答检测（30%）—是否所有题目答案完全一致；（2）反向题冲突检测（40%）—同一维度的正反题是否存在逻辑矛盾；（3）维度内方差检测（30%）—同一维度4题的答案是否高度离散。总分0–100。"
+      }
+    ]
+  },
+  "result_interpretation_guide": {
+    "title": "如何理解你的结果",
+    "points": [
+      {
+        "heading": "主类型 ≠ 你的全部",
+        "body": "主类型反映的是你当前的恋爱倾向模式，不代表你'就是'某种人。人的恋爱风格会随着经历、年龄和伴侣的不同而变化。次类型和混合型标签同样重要——它们揭示了你恋爱人格的丰富性。"
+      },
+      {
+        "heading": "维度分数 > 类型标签",
+        "body": "类型是一个概括性的总结，但维度分数提供了更精细的信息。建议你重点关注雷达图中各维度的具体分数——哪些维度高于80分？哪些低于20分？这些极端值往往比类型名更能说明你的独特之处。"
+      },
+      {
+        "heading": "高分和低分都不是'好'或'坏'",
+        "body": "每个维度的高分和低分都有其优势和盲点。例如，高'激情投入'意味着你爱得热烈，但可能过度理想化；低'依恋焦虑'意味着你情绪稳定，但可能对伴侣的情感需求不够敏感。没有'完美的恋爱人格'。"
+      },
+      {
+        "heading": "关注盲点，而非标签",
+        "body": "结果中最重要的部分是'关系中的盲点'——这些是你可能在恋爱中反复踩到的坑。不是为了让你自责，而是帮助你下次在关系中更早地识别自己的模式。"
+      },
+      {
+        "heading": "一致性分数的意义",
+        "body": "一致性分数低不代表你'做错了'题目，而可能意味着：你对某些问题的感受确实很矛盾（这在'矛盾拉扯型'中尤其常见），或者你在不同情境下会表现出不同的倾向。如果分数很低（<50），建议重新填写一次。"
+      }
+    ]
+  },
+  "data_collection": {
+    "title": "数据收集与隐私说明",
+    "description": "如果你在本网站填写问卷，你的答题数据和结果可能会被用于研究和产品改进。",
+    "principles": [
+      "所有数据默认匿名收集，不关联个人身份信息",
+      "答题数据仅用于群体统计分析和产品改进，不会用于任何商业用途",
+      "用户可选择不分享数据（在提交结果前提供 opt-out 选项）",
+      "分享功能生成的图片仅包含用户的类型和维度分数，不包含原始答题记录",
+      "数据存储遵循最小必要原则，定期清理无用的日志数据"
+    ]
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "content": [
+      "本测评仅为恋爱倾向的自我了解工具，不构成任何形式的心理诊断、临床评估或专业咨询建议。",
+      "本测评的设计基于公开发表的心理学研究构念，但并非经过严格信效度检验的标准化心理量表，不能替代专业的心理测量工具。",
+      "测评结果反映的是你当前的自我报告倾向，可能受到填答时的心情、环境和自我认知偏差的影响，不应被视为对你人格或恋爱能力的固定评判。",
+      "如果你在恋爱关系中存在持续的困扰、痛苦或不安全感，建议寻求具备资质的心理咨询师或心理健康专业人士的帮助。",
+      "本测评的设计者不对因使用本测评结果而产生的任何个人决定或后果承担责任。",
+      "如果你对恋爱和自我探索感兴趣，推荐阅读：Sternberg《爱情三角理论》、Gottman《幸福的婚姻》、Hazan & Shaver《成人依恋》、以及中国科学院心理研究所发布的《心理健康蓝皮书》系列报告。"
+    ]
+  },
+  "faq": [
+    {
+      "q": "我应该用多长时间来完成问卷？",
+      "a": "大部分人可以在 5–8 分钟内完成。建议找一个安静的时间段，按真实感受作答，不要过度思考每道题的'对错'。"
+    },
+    {
+      "q": "我应该凭借'实际行为'还是'真实想法'来作答？",
+      "a": "请以你的真实倾向和想法为准，而不是你认为'应该'怎么回答，也不是你过去某一段特定关系中的具体行为。如果某道题的场景你还没有经历过，请想象自己在那个情境中最可能做出的反应。"
+    },
+    {
+      "q": "为什么我的结果里有'混合倾向'？",
+      "a": "当你的得分模式在两个类型之间非常接近时（匹配度差距 ≤ 5 分），系统不会强行把你归为某一方。这意味着你的恋爱风格确实存在双重特征——这可能与你在不同关系中表现出不同的侧面有关。"
+    },
+    {
+      "q": "我的结果会变吗？",
+      "a": "会。恋爱倾向不是固定的人格特质，而是会随着你的成长、经历和自我反思而变化的。如果半年后重新测试得到了不同的结果，这完全正常。"
+    },
+    {
+      "q": "这个测评有'正确答案'吗？",
+      "a": "没有。任何选项都没有对错之分。'非常不同意'和'非常同意'之间不存在哪个更'好'或更'正确'。请务必按照你的真实情况作答。"
+    },
+    {
+      "q": "为什么你们的说法和 MBTI 不太一样？",
+      "a": "MBTI 将人分为互斥的类型（E或I、S或N），而本测评基于连续维度模型——大多数人在每个维度上都处于某个区间，而非两端。这也是为什么我们设置了'混合型'和'维度百分比'，而不是简单的二分标签。"
+    },
+    {
+      "q": "我可以把这些题目放到我自己的研究里吗？",
+      "a": "本项目的所有题目和配置文件都是可修改和可替换的。题目元数据中标注了学术来源构念，便于在论文中说明理论依据。如果你计划用于正式研究，建议先进行预试和项目分析以验证信效度。"
+    }
+  ],
+  "references": [
+    "Lee, J. A. (1973). The Colors of Love: An Exploration of the Ways of Loving. New Press.",
+    "Hendrick, C., & Hendrick, S. (1986). A theory and method of love. Journal of Personality and Social Psychology, 50(2), 392–402.",
+    "Sternberg, R. J. (1986). A triangular theory of love. Psychological Review, 93(2), 119–135.",
+    "Sternberg, R. J., & Sternberg, K. (2024). A RELIC theory of love. Theory & Psychology, 34, 671–698.",
+    "Hazan, C., & Shaver, P. R. (1987). Romantic love conceptualized as an attachment process. Journal of Personality and Social Psychology, 52(3), 511–524.",
+    "Brennan, K. A., Clark, C. L., & Shaver, P. R. (1998). Self-report measurement of adult attachment. In Simpson & Rholes (Eds.), Attachment Theory and Close Relationships. Guilford.",
+    "Bartholomew, K., & Horowitz, L. M. (1991). Attachment styles among young adults. Journal of Personality and Social Psychology, 61(2), 226–244.",
+    "Rusbult, C. E. (1980). Commitment and satisfaction in romantic associations. Journal of Experimental Social Psychology, 16, 172–186.",
+    "Rusbult, C. E., Martz, J. M., & Agnew, C. R. (1998). The Investment Model Scale. Personal Relationships, 5, 357–391.",
+    "Gottman, J. M. (1994). What Predicts Divorce? Lawrence Erlbaum Associates.",
+    "李同归, & 加藤和生. (2006). 成人依恋的测量：亲密关系经历量表（ECR）中文版. 心理学报, 38(3), 399–406.",
+    "曹慧, 史占彪, & 张建新. (2007). 爱情观量表在中国学生群体中的修订. 中国临床心理学杂志, 15(5), 459–462.",
+    "Gauvin, S. et al. (2024). Love lost in translation: Avoidant individuals inaccurately perceive their partners' positive emotions. Personality and Social Psychology Bulletin.",
+    "Schulz, S. et al. (2025). Mapping love: A personality-centered network analysis of relationship satisfaction. Frontiers in Psychology.",
+    "Genesse, D. et al. (2025). Being me while loving you: The role of autonomy. Journal of Marital and Family Therapy.",
+    "中国科学院心理研究所 (2025). 2024年成年人与在校大学生婚育观调查报告. 心理健康蓝皮书."
+  ]
+}

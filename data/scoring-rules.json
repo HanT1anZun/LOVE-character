@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "title": "恋爱倾向画像 · 评分规则配置",
+    "version": "1.0.0",
+    "description": "定义从原始答案到最终画像结果的完整计算逻辑。所有规则可审计、可替换、可调参。"
+  },
+  "scoring": {
+    "raw_score_range": {
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "labels": {
+        "1": "非常不同意",
+        "2": "不同意",
+        "3": "一般",
+        "4": "同意",
+        "5": "非常同意"
+      }
+    },
+    "reverse_scoring": {
+      "formula": "reversed = 6 - raw_score",
+      "description": "当 question.reverse === true 时，将原始分数进行反向编码：1→5, 2→4, 3→3, 4→2, 5→1"
+    },
+    "dimension_aggregation": {
+      "method": "sum",
+      "description": "每维度所有题目（含已反向处理的反向题）的分数求和，得到维度原始总分",
+      "questions_per_dimension": 4,
+      "possible_range": {
+        "min": 4,
+        "max": 20
+      }
+    },
+    "normalization": {
+      "formula": "normalized = (raw_dimension_sum - 4) / 16 × 100",
+      "description": "将维度原始总分换算为0–100的标准分，便于跨维度比较和可视化",
+      "range": {
+        "min": 0,
+        "max": 100,
+        "precision": 1
+      }
+    }
+  },
+  "type_matching": {
+    "description": "将用户的8维度得分向量与各结果类型的维度特征模板进行匹配，选取匹配度最高的类型作为主类型",
+    "algorithm": "euclidean_distance_weighted",
+    "steps": [
+      {
+        "step": 1,
+        "name": "构建用户得分向量",
+        "description": "U = [v1, v2, ..., v8]，其中 vi 为第 i 个维度归一化后的 0–100 分"
+      },
+      {
+        "step": 2,
+        "name": "构建类型锚点向量",
+        "description": "每个类型有预设的维度锚点：high=85, medium=50, low=15。构建锚点向量 T = [t1, t2, ..., t8]"
+      },
+      {
+        "step": 3,
+        "name": "计算加权欧几里得距离",
+        "formula": "distance = sqrt( Σ( wi × (vi − ti)² ) )",
+        "description": "wi 为该维度在该类型中的权重——标记为 high 或 low 的维度权重为 2.0，标记为 medium 的维度权重为 1.0。这样关键维度对类型匹配的影响更大。"
+      },
+      {
+        "step": 4,
+        "name": "距离转换为匹配度",
+        "formula": "match_score = max(0, 100 − distance)",
+        "description": "距离越小，匹配度越高。100为完美匹配。"
+      },
+      {
+        "step": 5,
+        "name": "确定主类型和次类型",
+        "description": "匹配度最高的类型为主类型，第二高的为次类型。如果最高匹配度与次高匹配度差距 ≤ 5 且两个类型本身的维度锚点存在重叠，则输出混合型。"
+      },
+      {
+        "step": 6,
+        "name": "混合型边界",
+        "description": "当主次类型匹配度差 ≤ 5 时，不对用户强行分类，而是输出 '主类型名 × 次类型名 混合倾向'，并附带说明两个类型的共同特征。"
+      }
+    ]
+  },
+  "dimension_anchors": {
+    "description": "各类型的维度锚点定义。用于构建类型向量，计算用户得分向量与各类型的距离。",
+    "passionate_devoted": {
+      "passion_eros": "high",
+      "game_ludus": "neutral",
+      "companion_storge": "neutral",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "neutral",
+      "attachment_avoidance": "low",
+      "sacrifice_agape": "high",
+      "communication_open": "neutral"
+    },
+    "steady_companion": {
+      "passion_eros": "neutral",
+      "game_ludus": "low",
+      "companion_storge": "high",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "low",
+      "attachment_avoidance": "neutral",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    },
+    "rational_planner": {
+      "passion_eros": "neutral",
+      "game_ludus": "neutral",
+      "companion_storge": "neutral",
+      "rational_pragma": "high",
+      "attachment_anxiety": "low",
+      "attachment_avoidance": "medium",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    },
+    "slowburn_observer": {
+      "passion_eros": "low",
+      "game_ludus": "neutral",
+      "companion_storge": "high",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "neutral",
+      "attachment_avoidance": "high",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    },
+    "sensitive_attached": {
+      "passion_eros": "high",
+      "game_ludus": "neutral",
+      "companion_storge": "neutral",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "high",
+      "attachment_avoidance": "low",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    },
+    "free_explorer": {
+      "passion_eros": "neutral",
+      "game_ludus": "high",
+      "companion_storge": "neutral",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "low",
+      "attachment_avoidance": "high",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    },
+    "avoidant_independent": {
+      "passion_eros": "neutral",
+      "game_ludus": "neutral",
+      "companion_storge": "neutral",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "low",
+      "attachment_avoidance": "high",
+      "sacrifice_agape": "low",
+      "communication_open": "neutral"
+    },
+    "ambivalent_torn": {
+      "passion_eros": "neutral",
+      "game_ludus": "high",
+      "companion_storge": "neutral",
+      "rational_pragma": "neutral",
+      "attachment_anxiety": "high",
+      "attachment_avoidance": "high",
+      "sacrifice_agape": "neutral",
+      "communication_open": "neutral"
+    }
+  },
+  "anchor_values": {
+    "high": 85,
+    "medium": 50,
+    "neutral": 50,
+    "low": 15
+  },
+  "consistency_scoring": {
+    "description": "评估用户回答的内部一致性。满分100，低分提示结果可能不够可靠。",
+    "components": [
+      {
+        "id": "extreme_uniform",
+        "name": "极端一致回答检测",
+        "weight": 30,
+        "description": "检测用户是否对所有题目给出完全相同的答案（如全部选3），或全部选择极端值（全部1或全部5）",
+        "logic": "如果所有32题答案的方差为0，则得分=0（完全无效）。如果方差 ≤ 0.5，则得分减半。方差正常则满分。",
+        "calculation": "variance_of_all_answers < 0.1 → 0分; variance < 0.5 → 15分; variance ≥ 0.5 → 30分"
+      },
+      {
+        "id": "reverse_item_conflict",
+        "name": "反向题冲突检测",
+        "weight": 40,
+        "description": "检测同一维度的正向题和反向题是否存在逻辑矛盾。例如激情投入维度：正向题高分+反向题也高分=逻辑矛盾。",
+        "logic": "每个维度有3个正向题和1个反向题。计算正向题平均分和反向题（已反向处理）的差距。如果差距 > 2（即在5点量表上，正向说高、反向也说高或反之），则该维度标记为冲突。",
+        "calculation": "无冲突维度=满分; 1个维度冲突=30分; 2个维度冲突=15分; ≥3个维度冲突=0分"
+      },
+      {
+        "id": "intra_dimension_variance",
+        "name": "维度内一致性检测",
+        "weight": 30,
+        "description": "检测同一维度内4道题的答案是否高度一致。4道题测量的应该是相同的潜在倾向。",
+        "logic": "对每个维度计算4题得分的标准差。标准差 > 1.5（在5点量表上跨度很大）的维度标记为低一致性维度。",
+        "calculation": "0个低一致性维度=30分; 1-2个=20分; 3-4个=10分; ≥5个=0分"
+      }
+    ],
+    "interpretation": {
+      "80-100": "回答一致性高，结果可信",
+      "50-79": "部分回答存在矛盾，结果可能有一定偏差",
+      "0-49": "回答一致性较低，建议重新填写"
+    }
+  },
+  "mixed_type_detection": {
+    "enabled": true,
+    "primary_secondary_gap_threshold": 5,
+    "description": "当用户最高维度匹配度与第二高维度匹配度的差距 ≤ 5 分时，触发混合型输出。混合型将并排展示两个类型的完整信息，并在顶部增加'混合倾向'说明。",
+    "mixed_type_description_template": "你的得分模式显示你在「{primary_type_name}」和「{secondary_type_name}」之间存在混合倾向。这意味着你兼具两种类型的特征——在不同情境下、或者面对不同的人时，你可能表现出不同类型的恋爱风格。这本身不是问题，而是你恋爱人格丰富性的一种体现。"
+  },
+  "output_structure": {
+    "description": "最终输出给前端的数据结构",
+    "fields": {
+      "primary_type": "主类型对象（id, name, subtitle, strengths, blindspots, ...）",
+      "secondary_type": "次类型对象",
+      "is_mixed": "是否为混合型 (boolean)",
+      "dimension_scores": "{ 维度id: 0-100分数 }",
+      "dimension_percentiles": "{ 维度id: 百分位 }",
+      "match_scores": "{ 类型id: 匹配度 }",
+      "consistency_score": "0-100整数",
+      "consistency_level": "\"high\" | \"medium\" | \"low\"",
+      "consistency_message": "对应的一致性提示文案",
+      "radar_chart_data": "雷达图所需的数据结构",
+      "share_text": "分享文案",
+      "legal_disclaimer": "免责声明"
+    }
+  }
+}
